@@ -4,6 +4,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Janisku7</Authors>
+    <PackageProjectUrl>https://github.com/JT7SKU/JT7SKU.Lib.Twitch</PackageProjectUrl>
+    <Description>having twithch library for SKU projects</Description>
+    <Copyright>Jani "Janisku7" Turunen</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    
   </PropertyGroup>
 
 </Project>
