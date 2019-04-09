@@ -8,6 +8,7 @@
     <Description>having twithch library for SKU projects</Description>
     <Copyright>Jani "Janisku7" Turunen</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.0-alpha.1</Version>
     
   </PropertyGroup>
 
