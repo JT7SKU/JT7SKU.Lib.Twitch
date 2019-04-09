@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JT7SKU.Lib.Twitch
 {
-    public class Vip
+    public class VIP
     {
         public int Id { get; set; }
         public User User { get; set; }
