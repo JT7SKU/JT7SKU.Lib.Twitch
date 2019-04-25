@@ -45,7 +45,19 @@ namespace JT7SKU.Lib.Twitch.Grains
             await this.WriteStateAsync();
             this.viewers.ForEach(_ => _.FollowerAdded(username));            
         }
-
+        public async Task PublishMessageAsync(string message)
+        {
+            var Glitch = this.CreateNewTwitchMessage(message);
+            this.logger.LogInformation($"{GrainType} {GrainKey} publishing new glitch message {Glitch}");
+            this.State.MyPublishedMessages.Enqueue(Glitch);
+            while (this.State.MyPublishedMessages.Count > PublishedMessageCacheSize)
+            {
+                this.State.MyPublishedMessages.Dequeue();
+            }
+            await this.WriteStateAsync();
+            this.logger.LogInformation($"{GrainType} {GrainKey} sending glitch message to {this.viewers.Count}");
+            
+        }
         public void NewBroadcast(Message message)
         {
             throw new NotImplementedException();
@@ -121,12 +133,12 @@ namespace JT7SKU.Lib.Twitch.Grains
 
         public Task<ImmutableList<string>> GetTipsListAsync() => Task.FromResult(this.State.Tips.Keys.ToImmutableList());
 
-        public void NewSubscriber(Message message)
+        public Task NewSubscriber(User user,Message message)
         {
             throw new NotImplementedException();
         }
 
-        public void NewFollower(Message message)
+        public Task NewFollower(User user,Message message)
         {
             throw new NotImplementedException();
         }
@@ -173,6 +185,16 @@ namespace JT7SKU.Lib.Twitch.Grains
                     this.outstandingWriteStateOperation = null;
                 }
             }
+        }
+
+        public Task<ImmutableList<Message>> GetPublishedMessagesAsync(int n = 10, int start = 0)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task RemoveFollowerAsync(string username, ITwitchFollower follower)
+        {
+            throw new NotImplementedException();
         }
     }
     public class TwitchAccountState

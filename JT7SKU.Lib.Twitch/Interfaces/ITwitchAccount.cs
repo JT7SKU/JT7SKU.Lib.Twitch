@@ -6,7 +6,7 @@ using System.Collections.Immutable;
 
 namespace JT7SKU.Lib.Twitch.Interfaces
 {
-   public interface ITwitchAccount : ITwitchBroadcaster, ITwitchSubscriber, ITwitchFollower
+   public interface ITwitchAccount : ITwitchPublisher, ITwitchSubscriber
     {
         Task FollowUserIdAsync(string userNameToFollow);
         Task UnFollowUserIdAsync(string userNameToFollow);
@@ -15,5 +15,6 @@ namespace JT7SKU.Lib.Twitch.Interfaces
         Task UnSubscribeAsync(ITwitchViewer viewer);
         Task FollowAsync(ITwitchViewer viewer);
         Task UnFollowAsync(ITwitchViewer viewer);
+        Task PublishMessageAsync(string message);
     }
 }

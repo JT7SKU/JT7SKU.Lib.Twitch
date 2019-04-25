@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.Interfaces
 {
     public interface ITwitchTip
     {
-        void NewTip(Message message);
+        Task NewTip(Message message);
     }
 }

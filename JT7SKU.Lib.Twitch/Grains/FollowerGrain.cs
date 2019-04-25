@@ -2,14 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.Grains
 {
     public class FollowerGrain : ITwitchFollower
     {
-        public void NewFollower(Message message)
+        private readonly Follower follower;
+        private bool IsFollowing = false;
+        public Task NewFollower(User user,Message message)
         {
-            throw new NotImplementedException();
+            follower.User = user;
+            IsFollowing = true;
+            return Task.CompletedTask;
         }
     }
 }

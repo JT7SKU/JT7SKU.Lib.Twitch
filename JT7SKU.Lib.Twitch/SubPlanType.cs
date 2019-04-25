@@ -3,8 +3,8 @@
     public enum SubPlanType
     {
         Prime,
-        Thousand,
-        TwoThousand,
-        ThreeThousand
+        TierI,
+        TierII,
+        TierIII
     }
 }

@@ -4,17 +4,22 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
+using Orleans;
 
 namespace JT7SKU.Lib.Twitch.Grains
 {
-    public class BroadcasterGrain : ITwitchBroadcaster
+    public class BroadcasterGrain :Grain, ITwitchBroadcaster
     {
+        public override Task OnActivateAsync()
+        {
+            return base.OnActivateAsync();
+        }
         public Task AddFollowerAsync(string username, ITwitchFollower follower)
         {
             throw new NotImplementedException();
         }
 
-        public Task AddSubscriberAsync(string username, ITwitchSubscriber subscriber)
+        public async Task AddSubscriberAsync(string username, ITwitchSubscriber subscriber)
         {
             throw new NotImplementedException();
         }
