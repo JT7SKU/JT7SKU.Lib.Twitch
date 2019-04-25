@@ -30,7 +30,7 @@ namespace JT7SKU.Lib.Twitch.Grains
             if (this.State.MyPublishedMessages == null) this.State.MyPublishedMessages = new Queue<Message>(PublishedMessageCacheSize);
             if (this.State.Followers == null) this.State.Followers = new Dictionary<string, ITwitchFollower>();
             if (this.State.Subscriptions == null) this.State.Subscriptions = new Dictionary<string, ITwitchSubscriber>();
-            if (this.State.Broadcasters == null) this.State.Broadcasters = new Dictionary<string, ITwitchBroadcaster>();
+            if (this.State.Broadcaster == null) this.State.Broadcaster = new BroadcasterGrain();
             this.logger.LogInformation($"{this.GrainType}{this.GrainKey} activated.");
             return Task.CompletedTask;
         }
@@ -199,7 +199,7 @@ namespace JT7SKU.Lib.Twitch.Grains
     }
     public class TwitchAccountState
     {
-        public Dictionary<string, ITwitchBroadcaster> Broadcasters { get; set; }
+        public ITwitchBroadcaster Broadcaster { get; set; }
         public Dictionary<string, ITwitchSubscriber> Subscriptions { get; set; }
         public Dictionary<string, ITwitchFollower> Followers { get; set; }
         public Dictionary<string, ITwitchCheer> Cheers { get; set; }
