@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentUnit.Twitch"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamKomponentsUnit.Twitch.Services", "StreamKomponentsUnit.Twitch.Services\StreamKomponentsUnit.Twitch.Services.csproj", "{15A96285-9D73-4464-8E27-2A2BC6A3F0E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitch.API", "Twitch Api\Twitch.API.csproj", "{2F7BB35F-69A6-471D-940C-E9CAC196763C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesKomponentUnit.Data.Twitch", "ServicesKomponentUnit.Data\ServicesKomponentUnit.Data.Twitch.csproj", "{E752D455-4111-4C43-B97B-B99DC7D28BE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamKlientUnit.Twitch", "StreamKlientUnit.Twitch\StreamKlientUnit.Twitch.csproj", "{E541D136-1E02-487E-ADF5-F042F06A2664}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{15A96285-9D73-4464-8E27-2A2BC6A3F0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15A96285-9D73-4464-8E27-2A2BC6A3F0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15A96285-9D73-4464-8E27-2A2BC6A3F0E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F7BB35F-69A6-471D-940C-E9CAC196763C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7BB35F-69A6-471D-940C-E9CAC196763C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7BB35F-69A6-471D-940C-E9CAC196763C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7BB35F-69A6-471D-940C-E9CAC196763C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E752D455-4111-4C43-B97B-B99DC7D28BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E752D455-4111-4C43-B97B-B99DC7D28BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E752D455-4111-4C43-B97B-B99DC7D28BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E752D455-4111-4C43-B97B-B99DC7D28BE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E541D136-1E02-487E-ADF5-F042F06A2664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E541D136-1E02-487E-ADF5-F042F06A2664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E541D136-1E02-487E-ADF5-F042F06A2664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E541D136-1E02-487E-ADF5-F042F06A2664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
