@@ -6,6 +6,6 @@ namespace Twitch_Api.Utils
 {
     public class Twitch
     {
-        public string baseurl = "https://api.twitch.tv/helix/";  
+        public string baseUrl = "https://api.twitch.tv/helix/";  
     }
 }
