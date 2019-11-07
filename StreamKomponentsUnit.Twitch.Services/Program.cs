@@ -5,8 +5,8 @@ using System;
 using Orleans.Hosting;
 using Orleans;
 using System.Threading.Tasks;
-using JT7SKU.Lib.Twitch.Grains;
 using System.Net;
+using Services.Kirjasto.Unit.Twitch.Grains;
 
 namespace StreamKomponentsUnit.Twitch.Services
 {
