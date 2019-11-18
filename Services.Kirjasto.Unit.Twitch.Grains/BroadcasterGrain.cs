@@ -6,14 +6,28 @@ using System.Threading.Tasks;
 using Orleans;
 using Services.Kirjasto.Unit.Twitch.Interfaces;
 using JT7SKU.Lib.Twitch;
+using Orleans.Runtime;
 
 namespace Services.Kirjasto.Unit.Twitch.Grains
 {
     public class BroadcasterGrain :Grain, ITwitchBroadcaster
     {
+        private readonly IPersistentState<ProfileState> _broadcasterProfile;
+
+        public BroadcasterGrain([PersistentState("broadcaster","broadcasterstore")] IPersistentState<ProfileState> broadcasterState)
+        {
+            _broadcasterProfile = broadcasterState;
+        }
         public override Task OnActivateAsync()
         {
             return base.OnActivateAsync();
+        }
+        public Task<User> GetBroadcasterAsync() => Task.FromResult(_broadcasterProfile.State.User);
+        public async Task SetBroadcasterAsync(Broadcaster broadcaster)
+        {
+            _broadcasterProfile.State.User = broadcaster.User;
+            _broadcasterProfile.State.UserStatus = UserStatus.Broadcaster;
+            await _broadcasterProfile.WriteStateAsync();
         }
         public Task AddFollowerAsync(string username, ITwitchFollower follower)
         {

@@ -8,6 +8,7 @@
         Subscriber,
         Cheerer,
         Gifter,
-        Clipper
+        Clipper,
+        Founder
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace JT7SKU.Lib.Twitch
 {
+    
     public class Broadcaster
     {
         public string Id { get; set; }
