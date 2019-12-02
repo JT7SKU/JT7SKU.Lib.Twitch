@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Orleans;
+using Orleans.Hosting;
+using Services.Kirjasto.Unit.Twitch.Grains;
 
 namespace Services.Kohdistuma.Unit.Twitch.OData
 {
@@ -18,6 +21,21 @@ namespace Services.Kohdistuma.Unit.Twitch.OData
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .UseOrleans(builder =>
+            {
+                builder.ConfigureApplicationParts(manager =>
+                {
+                    manager.AddApplicationPart(typeof(ChannelGrain).Assembly).WithReferences();
+                });
+                builder.AddMemoryGrainStorageAsDefault();
+                builder.AddDynamoDBGrainStorage(
+                    name: "profilestore",configureOptions: options=>
+                    {
+                        options.UseJson = true;
+
+                    });
+            })
+                
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

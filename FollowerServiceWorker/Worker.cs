@@ -21,6 +21,16 @@ namespace FollowerServiceWorker
             _logger = logger;
         }
 
+        public Task AddFollower(ITwitchFollower twitchFollower)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task RemoveFollower(ITwitchFollower twitchFollower)
+        {
+            throw new NotImplementedException();
+        }
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)

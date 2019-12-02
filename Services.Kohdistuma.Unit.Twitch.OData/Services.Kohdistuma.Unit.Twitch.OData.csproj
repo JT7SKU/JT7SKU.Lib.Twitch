@@ -6,6 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.2.2" />
+    <PackageReference Include="Microsoft.Orleans.Persistence.AzureStorage" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Orleans.Persistence.DynamoDB" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Orleans.Server" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Services.Kirjasto.Unit.Twitch.Grains\Services.Kirjasto.Unit.Twitch.Grains.csproj" />
   </ItemGroup>
 
 

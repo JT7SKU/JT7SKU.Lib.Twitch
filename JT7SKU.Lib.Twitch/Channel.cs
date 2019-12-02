@@ -6,6 +6,6 @@ namespace JT7SKU.Lib.Twitch
 {
     public class Channel : User
     {
-
+        public ChannelStatus ChannelStatus { get; set; }
     }
 }
