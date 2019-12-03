@@ -9,7 +9,10 @@
     margin: 1em 0;
     background-image: url('background.png');
 }
-body {
+head {
+    body
+
+{
     font-family: Consolas;
     background-color: #ebebeb;
 }
@@ -43,3 +46,4 @@ h1 {
     .container li.offline {
         background-color: #cf9e9e;
     }
+}

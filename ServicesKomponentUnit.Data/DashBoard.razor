@@ -1,0 +1,28 @@
+﻿@page   "/dashboard"
+@using Services.Kirjasto.Unit.Twitch.Grains
+
+<head>
+    <title>DashBoard</title>
+</head>
+<content>
+    <h1>Channels (@Count)</h1>
+    <div class="container">
+        <ul id="statusses">
+            @foreach(var channel in Channels)
+            {
+                <li>@channel</li>
+            }
+        </ul>
+    </div>
+</content>
+
+@code {
+    public int Count { get; set; }
+    [Parameter]
+    public IEnumerable<ChannelGrain> Channels { get; set; }
+        protected override Task OnParametersSetAsync()
+        {
+            return base.OnParametersSetAsync();
+        }
+
+}

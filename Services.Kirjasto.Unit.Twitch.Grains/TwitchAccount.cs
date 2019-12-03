@@ -14,6 +14,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
     [Reentrant]
     public class TwitchAccount : Grain<TwitchAccountState>, ITwitchAccount
     {
+        
         private const int ReceivedMessageCacheSize = 100;
         private const int PublishedMessageCacheSize = 100;
         private readonly ILogger<TwitchAccount> logger;
@@ -31,7 +32,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
             if (this.State.MyPublishedMessages == null) this.State.MyPublishedMessages = new Queue<Message>(PublishedMessageCacheSize);
             if (this.State.Followers == null) this.State.Followers = new Dictionary<string, ITwitchFollower>();
             if (this.State.Subscriptions == null) this.State.Subscriptions = new Dictionary<string, ITwitchSubscriber>();
-            if (this.State.Broadcaster == null) this.State.Broadcaster = new BroadcasterGrain();
+             //  if (this.State.Broadcaster == null) this.State.Broadcaster = new BroadcasterGrain();
             this.logger.LogInformation($"{this.GrainType}{this.GrainKey} activated.");
             return Task.CompletedTask;
         }
@@ -200,7 +201,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
     }
     public class TwitchAccountState
     {
-        public ITwitchBroadcaster Broadcaster { get; set; }
+       // public ITwitchBroadcaster Broadcaster { get; set; }
         public Dictionary<string, ITwitchSubscriber> Subscriptions { get; set; }
         public Dictionary<string, ITwitchFollower> Followers { get; set; }
         public Dictionary<string, ITwitchCheer> Cheers { get; set; }
