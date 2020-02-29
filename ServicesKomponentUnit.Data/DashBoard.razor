@@ -1,5 +1,5 @@
 ﻿@page   "/dashboard"
-@using Services.Kirjasto.Unit.Twitch.Grains
+@using JT7SKU.Lib.Twitch
 
 <head>
     <title>DashBoard</title>
@@ -10,7 +10,7 @@
         <ul id="statusses">
             @foreach(var channel in Channels)
             {
-                <li>@channel</li>
+                <li><div>@channel.ChannelStatus <p>@channel.DisplayName</p></div></li>
             }
         </ul>
     </div>
@@ -19,10 +19,15 @@
 @code {
     public int Count { get; set; }
     [Parameter]
-    public IEnumerable<ChannelGrain> Channels { get; set; }
-        protected override Task OnParametersSetAsync()
-        {
-            return base.OnParametersSetAsync();
-        }
+    public IEnumerable<Channel> Channels { get; set; }
+    protected override Task OnParametersSetAsync()
+    {
+        return base.OnParametersSetAsync();
+    }
+    protected override Task OnInitializedAsync()
+    {
+        Count = Channels.Count();
+        return base.OnInitializedAsync();
+    }
 
 }
