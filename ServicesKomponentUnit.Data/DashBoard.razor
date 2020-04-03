@@ -1,33 +1,18 @@
 ﻿@page   "/dashboard"
-@using JT7SKU.Lib.Twitch
+
 
 <head>
     <title>DashBoard</title>
 </head>
 <content>
-    <h1>Channels (@Count)</h1>
+    @*<h1>Channels (@Count)</h1>
     <div class="container">
         <ul id="statusses">
             @foreach(var channel in Channels)
             {
-                <li><div>@channel.ChannelStatus <p>@channel.DisplayName</p></div></li>
+                <li><ChannelComponent StatusColor="ChannelStatusToColor(channel.ChannelStatus)" ChannelBoxUrl="channel.ProfileUrl"/></li>
             }
         </ul>
-    </div>
+    </div>*@
 </content>
 
-@code {
-    public int Count { get; set; }
-    [Parameter]
-    public IEnumerable<Channel> Channels { get; set; }
-    protected override Task OnParametersSetAsync()
-    {
-        return base.OnParametersSetAsync();
-    }
-    protected override Task OnInitializedAsync()
-    {
-        Count = Channels.Count();
-        return base.OnInitializedAsync();
-    }
-
-}
