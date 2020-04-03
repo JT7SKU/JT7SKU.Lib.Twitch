@@ -11,23 +11,20 @@ using System.Threading.Tasks;
 
 namespace ServicesKomponentUnit.Data.Twitch
 {
-    public  class Dashboard
+    public partial class DashBoard
     {
         public int Count { get; set; }
         [Parameter]
         public IEnumerable<Channel> Channels { get; set; }
-        //protected override Task OnParametersSetAsync()
-        //{
-        //    return base.OnParametersSetAsync();
-        //}
-        //protected override Task OnInitializedAsync()
-        //{
-        //    Count = Channels.Count();
-        //    return base.OnInitializedAsync();
-        //}
-        Color ChannelStatusToColor(ChannelStatus status)
+        protected override Task OnParametersSetAsync()
         {
-            return System.Drawing.Color.White;
+            return base.OnParametersSetAsync();
         }
+        protected override Task OnInitializedAsync()
+        {
+            Count = Channels.Count();
+            return base.OnInitializedAsync();
+        }
+        
     }
 }

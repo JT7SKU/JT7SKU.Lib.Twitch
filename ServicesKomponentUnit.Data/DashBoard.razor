@@ -5,14 +5,16 @@
     <title>DashBoard</title>
 </head>
 <content>
-    @*<h1>Channels (@Count)</h1>
-    <div class="container">
-        <ul id="statusses">
+    <h1>Channels (@Count)</h1>
+    <section class="statuses">
+        
             @foreach(var channel in Channels)
             {
-                <li><ChannelComponent StatusColor="ChannelStatusToColor(channel.ChannelStatus)" ChannelBoxUrl="channel.ProfileUrl"/></li>
+                <ChannelComponent ChannelStatus="channel.ChannelStatus" 
+                                      ChannelBoxUrl="@channel.ProfileImageUrl" 
+                                      ChannelName="@channel.DisplayName" />
             }
-        </ul>
-    </div>*@
+       
+    </section>
 </content>
 

@@ -14,9 +14,12 @@ namespace ServicesKomponentUnit.Data.Twitch
         [Parameter]
         public string ChannelName { get; set; }
         [Parameter]
+        public ChannelStatus ChannelStatus { get; set; }
         public Color StatusColor { get; set; }
         protected override Task OnParametersSetAsync()
         {
+            if (ChannelStatus == ChannelStatus.Online) StatusColor = Color.Green;
+            else if (ChannelStatus == ChannelStatus.Offline) StatusColor = Color.Red;
             return base.OnParametersSetAsync();
         }
     }
