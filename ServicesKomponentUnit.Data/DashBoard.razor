@@ -5,16 +5,7 @@
     <title>DashBoard</title>
 </head>
 <content>
-    <h1>Channels (@Count)</h1>
-    <section class="statuses">
-        
-            @foreach(var channel in Channels)
-            {
-                <ChannelComponent ChannelStatus="channel.ChannelStatus" 
-                                      ChannelBoxUrl="@channel.ProfileImageUrl" 
-                                      ChannelName="@channel.DisplayName" />
-            }
-       
-    </section>
+    <ChannelStatuses></ChannelStatuses>
+    
 </content>
 

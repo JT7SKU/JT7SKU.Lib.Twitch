@@ -1,0 +1,16 @@
+﻿
+<section class="statuses">
+        <h1>Channels (@Count)</h1>
+
+        @foreach (var channel in Channels)
+        {
+            <ChannelComponent ChannelStatus="channel.ChannelStatus"
+                              ChannelBoxUrl="@channel.ProfileImageUrl"
+                              ChannelName="@channel.DisplayName">
+                <OnAir>
+
+                </OnAir>
+            </ChannelComponent>
+        }
+
+</section>
