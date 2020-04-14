@@ -15,6 +15,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
     {
         private Channel Channel;
         private readonly ILogger<ChannelGrain> logger;
+        private readonly HashSet<ITwitchViewer> viewers = new HashSet<ITwitchViewer>();
         private string GrainType => nameof(ChannelGrain);
         private string GrainKey => this.GetPrimaryKeyString();
         public ChannelGrain(ILogger<ChannelGrain> logger)
@@ -29,6 +30,33 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
             this.State.Followers = new Dictionary<string, ITwitchFollower>();
             return base.OnActivateAsync();
         }
+
+        #region Viewer portion
+
+        public Task SubscribeAsync(ITwitchViewer viewer)
+        {
+            this.viewers.Add(viewer);
+            return Task.CompletedTask;
+        }
+
+        public Task UnSubscribeAsync(ITwitchViewer viewer)
+        {
+            this.viewers.Remove(viewer);
+            return Task.CompletedTask;
+        }
+
+        public Task FollowAsync(ITwitchViewer viewer)
+        {
+            this.viewers.Add(viewer);
+            return Task.CompletedTask;
+        }
+
+        public Task UnFollowAsync(ITwitchViewer viewer)
+        {
+            this.viewers.Remove(viewer);
+            return Task.CompletedTask;
+        }
+        #endregion 
     }
     public class ChannelState
     {

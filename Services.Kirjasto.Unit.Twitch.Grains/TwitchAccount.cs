@@ -103,29 +103,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
             throw new NotImplementedException();
         }
 
-        public Task SubscribeAsync(ITwitchViewer viewer)
-        {
-            this.viewers.Add(viewer);
-            return Task.CompletedTask;
-        }
-
-        public Task UnSubscribeAsync(ITwitchViewer viewer)
-        {
-            this.viewers.Remove(viewer);
-            return Task.CompletedTask;
-        }
-
-        public Task FollowAsync(ITwitchViewer viewer)
-        {
-            this.viewers.Add(viewer);
-            return Task.CompletedTask;
-        }
-
-        public Task UnFollowAsync(ITwitchViewer viewer)
-        {
-            this.viewers.Remove(viewer);
-            return Task.CompletedTask;
-        }
+        
 
         public Task<ImmutableList<string>> GetFollowersListAsync() => Task.FromResult(this.State.Followers.Keys.ToImmutableList());
 
