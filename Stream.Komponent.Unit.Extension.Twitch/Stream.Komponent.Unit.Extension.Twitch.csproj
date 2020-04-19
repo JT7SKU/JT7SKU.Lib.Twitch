@@ -1,8 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <AssemblyName>Stream.Komponent.Utility.Extension.Twitch</AssemblyName>
+    <RootNamespace>Stream.Komponent.Utility.Extension.Twitch</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Janisku7</Copyright>
+    <Authors>Janisku7</Authors>
+    <Version>0.0.1</Version>
   </PropertyGroup>
 
 

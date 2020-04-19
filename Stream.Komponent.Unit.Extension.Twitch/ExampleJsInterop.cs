@@ -1,7 +1,7 @@
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace Stream.Komponent.Unit.Extension.Twitch
+namespace Stream.Komponent.Utility.Extension.Twitch
 {
     public class ExampleJsInterop
     {
