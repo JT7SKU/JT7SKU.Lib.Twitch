@@ -7,7 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace JT7SKU.Lib.Twitch.EventSub.Events.Channel
 {
-    public class ChannelPointsCustomRewardsUpdateEvent
+    public class ChannelPointsCustomRewardsRemoveEvent
     {
         public string Id { get; set; }
         public string BroadcasterUserId { get; set; }
