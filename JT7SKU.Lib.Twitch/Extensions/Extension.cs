@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JT7SKU.Lib.Twitch
+namespace JT7SKU.Lib.Twitch.Extensions
 {
     public class Extension
     {

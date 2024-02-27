@@ -6,8 +6,8 @@ namespace JT7SKU.Lib.Twitch
 {
     public enum SubscriberType
     {
-        Tier1,
-        Tier2,
-        Tier3
+        Tier1 = 1000,
+        Tier2 = 2000,
+        Tier3 = 3000
     }
 }

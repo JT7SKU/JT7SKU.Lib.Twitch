@@ -43,75 +43,78 @@ namespace Twitch_Api.Utils
             }
         }
 
-        [Function(nameof(ChannelEntity))]
-        public static async Task HandleEntityOperation([EntityTrigger]TaskEntityContext context, [SignalROutput(HubName ="channelstatus")]IEnumerable<SignalRMessageAction> signalRMessages, [QueueO:utput("timeoutQueue", Connection="AzureWebJobs")]Channel timeoutQueue, ILogger<ChannelEntity> logger)
-        {
-            if (!context.HasState)
-            {
-                context.SetState(new ChannelEntity(context.EntityKey, logger, timeoutQueue, signalRMessages));
-            }
-            await context.DispatchAsync<ChannelEntity>(context.EntityKey, logger, timeoutQueue, signalRMessages);
-        }
+        //[Function(nameof(ChannelEntity))]
+        //public static async Task HandleEntityOperation([EntityTrigger]TaskEntityDispatcher dispatcher, [SignalROutput(HubName ="channelstatus")]IEnumerable<SignalRMessageAction> signalRMessages, [QueueO:utput("timeoutQueue", Connection="AzureWebJobs")]Channel timeoutQueue, ILogger<ChannelEntity> logger)
+        //{
+        //    if (!dispatcher.HasState)
+        //    {
+        //        context.SetState(new ChannelEntity(context.EntityKey, logger, timeoutQueue, signalRMessages));
+        //    }
+        //    await dispatcher.DispatchAsync<ChannelEntity>( );
+        //}
 
-        public async Task MessageReceived()
-        {
-            this.LastCommunicationDateTime = DateTime.UtcNow;
+        //public async Task MessageReceived()
+        //{
+        ////this.LastCommunicationDateTime = DateTime.UtcNow;
 
-            bool addTimeoutMessage = true;
-            if (this.TimeoutQueueMessageId != null)
-            {
-                try
-                {
-                    // reset the timeout
+        ////bool addTimeoutMessage = true;
+        ////if (this.TimeoutQueueMessageId != null)
+        ////{
+        ////    try
+        ////    {
+        ////        // reset the timeout
 
-                    var message = new CloudQueueMessage(this.TimeoutQueueMessageId, this.TimeoutQueueMessagePopReceipt);
-                    await this.timeoutQueue.UpdateMessageAsync(message, this.OfflineAfter.Value, MessageUpdateFields.Visibility);
-                    this.TimeoutQueueMessagePopReceipt = message.PopReceipt;
-                    addTimeoutMessage = false;
-                }
-                catch (StorageException)
-                {
-                    // once... there was a message, not any more
-                    addTimeoutMessage = true;
-                }
-            }
-            if (addTimeoutMessage)
-            {
-                // start timeout 
+        ////        var message = new CloudQueueMessage(this.TimeoutQueueMessageId, this.TimeoutQueueMessagePopReceipt);
+        ////        await this.timeoutQueue.UpdateMessageAsync(message, this.OfflineAfter.Value, MessageUpdateFields.Visibility);
+        ////        this.TimeoutQueueMessagePopReceipt = message.PopReceipt;
+        ////        addTimeoutMessage = false;
+        ////    }
+        ////    catch (StorageException)
+        ////    {
+        ////        // once... there was a message, not any more
+        ////        addTimeoutMessage = true;
+        ////    }
+        ////}
+        ////if (addTimeoutMessage)
+        ////{
+        ////    // start timeout 
 
-                var message = new CloudQueueMessage(this.Id);
-                await timeoutQueue.AddMessageAsync(message, null, this.OfflineAfter, null, null);
-                this.TimeoutQueueMessageId = message.Id;
-                this.TimeoutQueueMessagePopReceipt = message.PopReceipt;
+        ////    var message = new Queue(this.Id);
+        ////    await timeoutQueue.AddMessageAsync(message, null, this.OfflineAfter, null, null);
+        ////    this.TimeoutQueueMessageId = message.Id;
+        ////    this.TimeoutQueueMessagePopReceipt = message.PopReceipt;
 
-                await this.ReportState("online");
-                this.logger.LogInformation($"Channel ${this.Id} if now online");
-                this.logger.LogMetric("online", 1);
-            }
-        }
-        private async Task ReportState(string state)
-        {
-            try
-            {
-                await this.signalRMessages.AddAsync(new SignalRMessage
-                {
-                    Target = "statusChanged",
-                    Arguments = new[] { new { channelId = this.Id, status = state } }
-                });
-            }
-            catch (Exception)
-            {
+        ////    await this.ReportState("online");
+        ////    this.logger.LogInformation($"Channel ${this.Id} if now online");
+        ////    this.logger.LogMetric("online", 1);
+        ////}
+        //await Task.CompletedTask;
+        //}
+        //private async Task ReportState(string state)
+        //{
+        ////try
+        ////{
+        ////    await this.signalRMessages.AddAsync(new SignalRMessage
+        ////    {
+        ////        Target = "statusChanged",
+        ////        Arguments = new[] { new { channelId = this.Id, status = state } }
+        ////    });
+        ////}
+        ////catch (Exception)
+        ////{
 
-                throw;
-            }
-        }
+        ////    throw;
+        ////}
+        //await Task.CompletedTask;
+        //}
 
-        public async Task ChannelTimeout()
-        {
-            this.TimeoutQueueMessageId = null;
-            this.TimeoutQueueMessagePopReceipt = null;
+        //public async Task ChannelTimeout()
+        //{
+        ////this.TimeoutQueueMessageId = null;
+        ////this.TimeoutQueueMessagePopReceipt = null;
 
-            await this.ReportState("offline");
-        }
+        ////await this.ReportState("offline");
+        //await Task.CompletedTask;
+        //}
     }
 }

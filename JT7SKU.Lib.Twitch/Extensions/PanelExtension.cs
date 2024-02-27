@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JT7SKU.Lib.Twitch
+namespace JT7SKU.Lib.Twitch.Extensions
 {
-    public class VideoComponent
+    public class PanelExtension
     {
         public string ExtensionID { get; set; }
         public bool Active { get; set; }
         public string Name { get; set; }
-        public ExtensionType ExtensionType { get; set; } = ExtensionType.Component;
+        public ExtensionType ExtensionType { get; set; } = ExtensionType.Panel;
         public string Version { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
     }
 }

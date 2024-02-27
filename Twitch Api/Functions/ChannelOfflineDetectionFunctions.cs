@@ -20,7 +20,7 @@ namespace Twitch_Api.Functions
             log.LogInformation($"C# Queue trigger function processed: {message}");
 
             var entity = new EntityInstanceId(nameof(ChannelEntity), message);
-            await durableEntityClient.SignalEntityAsync(entity, nameof(ChannelEntity.MessageReceived));
+            await durableEntityClient.SignalEntityAsync(entity, nameof(ChannelEntity));
         }
 
         [Function(nameof(HandleOfflineMessage))]
@@ -29,7 +29,7 @@ namespace Twitch_Api.Functions
             var channelId = message;
 
             var entity = new EntityInstanceId(nameof(ChannelEntity), channelId);
-            await durableEntityClient.SignalEntityAsync(entity, nameof(ChannelEntity.ChannelTimeout));
+            await durableEntityClient.SignalEntityAsync(entity, nameof(ChannelEntity));
 
             log.LogInformation($"Device ${channelId} if now offline");
             log.LogMetric("offline", 1);
