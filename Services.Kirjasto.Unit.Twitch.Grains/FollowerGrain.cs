@@ -13,9 +13,9 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
         private readonly Follower follower;
         private bool IsFollowing = false;
         
-        public override Task OnActivateAsync()
+        public async Task OnActivateAsync()
         {
-            return base.OnActivateAsync();
+            await Task.CompletedTask;
         }
         public Task NewFollower(User user,Message message)
         {

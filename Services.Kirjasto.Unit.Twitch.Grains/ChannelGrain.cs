@@ -23,12 +23,12 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
             this.logger = logger;
         }
         
-        public override Task OnActivateAsync()
+        public  async Task OnActivateAsync()
         {
             this.State.IsLive = true;
             this.State.Subscriptions = new Dictionary<string, ITwitchSubscriber>();
             this.State.Followers = new Dictionary<string, ITwitchFollower>();
-            return base.OnActivateAsync();
+            await Task.CompletedTask;
         }
 
         #region Viewer portion

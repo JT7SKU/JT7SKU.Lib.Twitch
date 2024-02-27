@@ -1,19 +1,18 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.DurableTask;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.DurableTask;
+using Microsoft.DurableTask.Client;
 using Microsoft.Extensions.Logging;
 
 namespace Twitch_Api.Functions
 {
     public static class GetTips
     {
-        [FunctionName("GetTips")]
+        [Function("GetTips")]
         public static async Task<List<string>> RunOrchestrator(
-            [OrchestrationTrigger] IDurableOrchestrationContext context)
+            [OrchestrationTrigger] TaskOrchestrationContext context)
         {
             var outputs = new List<string>();
 
@@ -26,25 +25,24 @@ namespace Twitch_Api.Functions
             return outputs;
         }
 
-        [FunctionName("GetTips_Hello")]
+        [Function("GetTips_Hello")]
         public static string SayHello([ActivityTrigger] string name, ILogger log)
         {
             log.LogInformation($"Saying hello to {name}.");
             return $"Hello {name}!";
         }
 
-        [FunctionName("GetTips_HttpStart")]
-        public static async Task<HttpResponseMessage> HttpStart(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
-            [DurableClient]IDurableOrchestrationClient starter,
+        [Function("GetTips_HttpStart")]
+        public static async Task HttpStart(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]string instanceId,
+            [DurableClient]DurableTaskClient starter,
             ILogger log)
         {
             // Function input comes from the request content.
-            string instanceId = await starter.StartNewAsync("GetTips", null);
+            await starter.RaiseEventAsync(instanceId,"GetTips", null);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
-            return starter.CreateCheckStatusResponse(req, instanceId);
         }
     }
 }

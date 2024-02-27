@@ -17,7 +17,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
     [Reentrant]
     public class TwitchToastService : GrainService, ITwitchToastService , IDisposable
     {
-        readonly IGrainFactory GrainFactory;
+        private readonly IGrainFactory GrainFactory;
         private SubscriberGrain subscriberGrain;
         private FollowerGrain followerGrain;
         private TipperGrain tipperGrain;
@@ -25,7 +25,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
         private Timer Countdown;
         public event Action OnHide;
         public event Action<string, ToastLevel> OnShow;
-        public TwitchToastService(IServiceProvider services, IGrainIdentity id, Silo silo, ILoggerFactory LoggerFactory, IGrainFactory grainFactory) : base(id, silo, LoggerFactory) => GrainFactory = grainFactory;
+        public TwitchToastService(IServiceProvider services, GrainId id, Silo silo, ILoggerFactory LoggerFactory, IGrainFactory grainFactory) : base(id, silo, LoggerFactory) => GrainFactory = grainFactory;
         public override Task Init(IServiceProvider serviceProvider)
         {
             return base.Init(serviceProvider);

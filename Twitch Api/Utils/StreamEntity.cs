@@ -1,9 +1,9 @@
-﻿using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.DurableTask;
-using Microsoft.Azure.WebJobs.Extensions.SignalRService;
+﻿
+using JT7SKU.Lib.Twitch;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.DurableTask.Entities;
 using Microsoft.Extensions.Logging;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Queue;
+
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -27,10 +27,10 @@ namespace Twitch_Api.Utils
         public string TimeoutQueueMessagePopReceipt { get; set; }
 
         private readonly ILogger<ChannelEntity> logger;
-        private readonly CloudQueue timeoutQueue;
-        private readonly IAsyncCollector<SignalRMessage> signalRMessages;
+        private readonly Channel timeoutQueue;
+        private readonly IEnumerable<SignalRMessageAction> signalRMessages;
 
-        public ChannelEntity(string Id,ILogger<ChannelEntity> logger, CloudQueue timeoutQueue, IAsyncCollector<SignalRMessage> signalRMessages)
+        public ChannelEntity(string Id,ILogger<ChannelEntity> logger, Channel timeoutQueue, IEnumerable<SignalRMessageAction> signalRMessages)
         {
             this.Id = Id;
             this.logger = logger;
@@ -43,8 +43,8 @@ namespace Twitch_Api.Utils
             }
         }
 
-        [FunctionName(nameof(ChannelEntity))]
-        public static async Task HandleEntityOperation([EntityTrigger]IDurableEntityContext context, [SignalR(HubName ="channelstatus")]IAsyncCollector<SignalRMessage> signalRMessages, [Queue("timeoutQueue", Connection="AzureWebJobs")]CloudQueue timeoutQueue, ILogger<ChannelEntity> logger)
+        [Function(nameof(ChannelEntity))]
+        public static async Task HandleEntityOperation([EntityTrigger]TaskEntityContext context, [SignalROutput(HubName ="channelstatus")]IEnumerable<SignalRMessageAction> signalRMessages, [QueueO:utput("timeoutQueue", Connection="AzureWebJobs")]Channel timeoutQueue, ILogger<ChannelEntity> logger)
         {
             if (!context.HasState)
             {

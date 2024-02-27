@@ -18,9 +18,9 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
         {
             _broadcasterProfile = broadcasterState;
         }
-        public override Task OnActivateAsync()
+        public async Task OnActivateAsync()
         {
-            return base.OnActivateAsync();
+            await Task.CompletedTask;
         }
         public Task<User> GetBroadcasterAsync() => Task.FromResult(_broadcasterProfile.State.User);
         public async Task SetBroadcasterAsync(Broadcaster broadcaster)
@@ -36,7 +36,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
 
         public async Task AddSubscriberAsync(string username, ITwitchSubscriber subscriber)
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
         }
 
         public Task<ImmutableList<string>> GetBitsCheeredListAsync()

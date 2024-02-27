@@ -10,9 +10,9 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
 {
     public class SubscriberGrain :Grain, ITwitchSubscriber
     {
-        public override Task OnActivateAsync()
+        public async Task OnActivateAsync()
         {
-            return base.OnActivateAsync();
+            await Task.CompletedTask;
         }
         public Task NewSubscriber(User user,Message message)
         {

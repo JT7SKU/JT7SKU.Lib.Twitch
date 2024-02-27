@@ -10,9 +10,9 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
 {
     public class TipperGrain :Grain, ITwitchTip
     {
-        public override Task OnActivateAsync()
+        public async Task OnActivateAsync()
         {
-            return base.OnActivateAsync();
+            await Task.CompletedTask;
         }
         
                    

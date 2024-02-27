@@ -1,45 +1,45 @@
 using System;
 using System.Threading.Tasks;
+using DurableTask.Core.Entities;
 using JT7SKU.Lib.Twitch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.DurableTask;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.DurableTask.Client.Entities;
+using Microsoft.DurableTask.Entities;
+using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.Logging;
-using Microsoft.WindowsAzure.Storage.Queue;
 using Twitch_Api.Utils;
 
 namespace Twitch_Api.Functions
 {
     public static class ChannelOfflineDetectionFunctions
     {
-        [FunctionName(nameof(QueueTrigger))]
-        public static async Task QueueTrigger([QueueTrigger("channel-messages", Connection = "AzureWebStorage")]CloudQueueMessage message, [DurableClient] IDurableEntityClient durableEntityClient, ILogger log)
+        [Function(nameof(QueueTrigger))]
+        public static async Task QueueTrigger([QueueTrigger("channel-messages", Connection = "AzureWebStorage")]string message, [DurableClient] DurableEntityClient durableEntityClient, ILogger log)
         {
-            log.LogInformation($"C# Queue trigger function processed: {message.AsString}");
+            log.LogInformation($"C# Queue trigger function processed: {message}");
 
-            var entity = new EntityId(nameof(ChannelEntity), message.AsString);
+            var entity = new EntityInstanceId(nameof(ChannelEntity), message);
             await durableEntityClient.SignalEntityAsync(entity, nameof(ChannelEntity.MessageReceived));
         }
 
-        [FunctionName(nameof(HandleOfflineMessage))]
-        public static async Task HandleOfflineMessage([DurableClient]IDurableEntityClient durableEntityClient, [QueueTrigger("timeoutQueue", Connection = "AzureWebJobsStorage")]CloudQueueMessage message, ILogger log)
+        [Function(nameof(HandleOfflineMessage))]
+        public static async Task HandleOfflineMessage([DurableClient]DurableEntityClient durableEntityClient, [QueueTrigger("timeoutQueue", Connection = "AzureWebJobsStorage")]string message, ILogger log)
         {
-            var channelId = message.AsString;
+            var channelId = message;
 
-            var entity = new EntityId(nameof(ChannelEntity), channelId);
+            var entity = new EntityInstanceId(nameof(ChannelEntity), channelId);
             await durableEntityClient.SignalEntityAsync(entity, nameof(ChannelEntity.ChannelTimeout));
 
             log.LogInformation($"Device ${channelId} if now offline");
             log.LogMetric("offline", 1);
         }
 
-        [FunctionName(nameof(GetStatus))]
-        public static async Task<IActionResult> GetStatus([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpTriggerArgs args, [DurableClient] IDurableEntityClient durableEntityClient)
+        [Function(nameof(GetStatus))]
+        public static async Task<IActionResult> GetStatus([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpTriggerArgs args, [DurableClient] DurableEntityClient durableEntityClient)
         {
-            var entity = new EntityId(nameof(ChannelEntity), args.ChannelID);
-            var device = await durableEntityClient.ReadEntityStateAsync<ChannelEntity>(entity);
+            var entity = new EntityInstanceId(nameof(ChannelEntity), args.ChannelID);
+            var device = await durableEntityClient.GetEntityAsync<ChannelEntity>(entity);
             return new OkObjectResult(device);
         }
     }

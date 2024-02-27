@@ -26,7 +26,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
         private string GrainType => nameof(TwitchAccount);
         private string GrainKey => this.GetPrimaryKeyString();
         #region Grain overrides
-        public override Task OnActivateAsync()
+        public async Task OnActivateAsync()
         {
             if (this.State.RecentReceiveMessages == null) this.State.RecentReceiveMessages = new Queue<Message>(ReceivedMessageCacheSize);
             if (this.State.MyPublishedMessages == null) this.State.MyPublishedMessages = new Queue<Message>(PublishedMessageCacheSize);
@@ -34,7 +34,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
             if (this.State.Subscriptions == null) this.State.Subscriptions = new Dictionary<string, ITwitchSubscriber>();
              //  if (this.State.Broadcaster == null) this.State.Broadcaster = new BroadcasterGrain();
             this.logger.LogInformation($"{this.GrainType}{this.GrainKey} activated.");
-            return Task.CompletedTask;
+            await Task.CompletedTask;
         }
         #endregion
         #region ITwitchAccountGrain interface methods

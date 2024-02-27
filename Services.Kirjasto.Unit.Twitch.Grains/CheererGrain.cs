@@ -10,9 +10,9 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
 {
     public class CheererGrain : Grain, ITwitchCheer
     {
-        public override Task OnActivateAsync()
+        public  async Task OnActivateAsync()
         {
-            return base.OnActivateAsync();
+            await Task.CompletedTask;
         }
         public Task NewCheer(Message message)
         {
