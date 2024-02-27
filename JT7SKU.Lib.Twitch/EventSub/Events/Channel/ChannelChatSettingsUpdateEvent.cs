@@ -8,5 +8,15 @@ namespace JT7SKU.Lib.Twitch.EventSub.Events.Channel
 {
     public class ChannelChatSettingsUpdateEvent
     {
+        public string BroadcasterUserId { get; set; }
+        public string BroadcasterUserName { get; set; }
+        public string BroadcasterUserLogin { get; set; }
+        public bool EmoteMode { get; set; }
+        public bool FollowerMode { get; set; }
+        public int FollowerModeDurationMinutes { get; set; }
+        public bool SlowMode { get; set; }
+        public int SlowModeWaitTimeSeconds { get; set; }
+        public bool SubscriberMode { get; set; }
+        public bool UniqueChatMode { get; set; }
     }
 }

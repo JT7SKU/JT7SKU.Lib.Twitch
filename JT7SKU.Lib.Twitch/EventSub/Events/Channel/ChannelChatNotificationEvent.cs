@@ -31,6 +31,7 @@ namespace JT7SKU.Lib.Twitch.EventSub.Events.Channel
         public PayItForward PayItForward { get; set; }
         public Announcement Announcement { get; set; }
         public CharityDonation CharityDonation { get; set; }
+        public BitsBadgeTier BitsBadgeTier { get; set; }
 
 
     }
