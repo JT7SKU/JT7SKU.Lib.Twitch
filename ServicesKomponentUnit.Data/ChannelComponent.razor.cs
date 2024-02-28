@@ -1,4 +1,4 @@
-﻿using JT7SKU.Lib.Twitch;
+﻿using JT7SKU.Lib.Twitch.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System;

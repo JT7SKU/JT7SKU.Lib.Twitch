@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JT7SKU.Lib.Twitch.Models;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace JT7SKU.Lib.Twitch.EventSub.Events.Channel

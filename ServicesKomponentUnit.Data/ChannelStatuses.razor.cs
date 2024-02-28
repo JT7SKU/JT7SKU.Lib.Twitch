@@ -1,4 +1,4 @@
-﻿using JT7SKU.Lib.Twitch;
+﻿using JT7SKU.Lib.Twitch.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using System;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ServicesKomponentUnit.Data.Twitch
 {
-   public partial class ChannelStatuses
+    public partial class ChannelStatuses
     {
         private HubConnection Hub;
         [Inject]

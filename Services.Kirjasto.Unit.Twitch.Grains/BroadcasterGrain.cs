@@ -7,6 +7,7 @@ using Orleans;
 using Services.Kirjasto.Unit.Twitch.Interfaces;
 using JT7SKU.Lib.Twitch;
 using Orleans.Runtime;
+using JT7SKU.Lib.Twitch.Models;
 
 namespace Services.Kirjasto.Unit.Twitch.Grains
 {

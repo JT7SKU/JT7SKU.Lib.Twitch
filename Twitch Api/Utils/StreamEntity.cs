@@ -1,5 +1,4 @@
-﻿
-using JT7SKU.Lib.Twitch;
+﻿using JT7SKU.Lib.Twitch.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.DurableTask.Entities;
 using Microsoft.Extensions.Logging;
@@ -12,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Twitch_Api.Utils
 {
-   [JsonObject(MemberSerialization.OptIn)]
+    [JsonObject(MemberSerialization.OptIn)]
     public class ChannelEntity
     {
        [JsonProperty]

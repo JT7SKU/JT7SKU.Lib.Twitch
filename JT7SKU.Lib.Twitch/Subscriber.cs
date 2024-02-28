@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using JT7SKU.Lib.Twitch.Models;
 
 namespace JT7SKU.Lib.Twitch
 {

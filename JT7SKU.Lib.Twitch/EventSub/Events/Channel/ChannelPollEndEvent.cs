@@ -1,4 +1,5 @@
 ﻿using JT7SKU.Lib.Twitch.EventSub.Conditions.Channel;
+using JT7SKU.Lib.Twitch.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
