@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Orleans;
 using Orleans.Hosting;
+
 using Services.Kirjasto.Unit.Twitch.Grains;
 
 namespace Services.Kohdistuma.Unit.Twitch.OData
@@ -24,7 +25,7 @@ namespace Services.Kohdistuma.Unit.Twitch.OData
             return Host.CreateDefaultBuilder(args)
             .UseOrleans(builder =>
             {
-               
+                
                 builder.AddMemoryGrainStorageAsDefault();
                 builder.AddDynamoDBGrainStorage(
                     name: "profilestore", configureOptions: options =>
