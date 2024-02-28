@@ -8,5 +8,7 @@ namespace JT7SKU.Lib.Twitch.EventSub
 {
     public class GlobalCooldown
     {
+        public bool IsEnabled { get; set; }
+        public int Seconds { get; set; }
     }
 }

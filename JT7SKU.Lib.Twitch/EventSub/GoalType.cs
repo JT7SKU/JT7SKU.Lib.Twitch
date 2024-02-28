@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.EventSub
 {
-    public class Image
+    public enum GoalType
     {
-        public string Url1x { get; set; }
-        public string Url2x { get; set; }
-        public string Url4x { get; set; }
+        follow,
+        subscription,
+        subscripion_count,
+        new_subscription,
+        new_subscription_count
     }
 }

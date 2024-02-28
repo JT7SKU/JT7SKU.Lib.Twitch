@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JT7SKU.Lib.Twitch
+namespace JT7SKU.Lib.Twitch.EventSub.Events
 {
-    public class Reward
+    public class DropEntitlementGrantEvent
     {
         public string Id { get; set; }
-        public string Title { get; set; }
-        public int Cost { get; set; }
-        public string Prompt { get; set; }
+        public Entitlement Data { get; set; }
     }
 }
