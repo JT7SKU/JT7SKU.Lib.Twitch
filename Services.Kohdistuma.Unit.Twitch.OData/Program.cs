@@ -19,26 +19,27 @@ namespace Services.Kohdistuma.Unit.Twitch.OData
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
             .UseOrleans(builder =>
             {
-                builder.ConfigureApplicationParts(manager =>
-                {
-                    manager.AddApplicationPart(typeof(ChannelGrain).Assembly).WithReferences();
-                });
+               
                 builder.AddMemoryGrainStorageAsDefault();
                 builder.AddDynamoDBGrainStorage(
-                    name: "profilestore",configureOptions: options=>
+                    name: "profilestore", configureOptions: options =>
                     {
-                        options.UseJson = true;
+                        options.AccessKey = "test";
+                        options.SecretKey = "test";
+                        options.Service = "EU-West-2";
 
                     });
             })
-                
+
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+        }
     }
 }
