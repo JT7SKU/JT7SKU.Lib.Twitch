@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.Api.ChannelPoints
 {
-    internal class DeleteCustomReward
+    public class DeleteCustomReward
     {
     }
 }

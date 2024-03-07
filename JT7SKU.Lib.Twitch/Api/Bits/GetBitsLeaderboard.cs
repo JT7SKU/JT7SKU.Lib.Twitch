@@ -6,7 +6,36 @@ using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.Api.Bits
 {
-    internal class GetBitsLeaderboard
+    public class GetBitsLeaderboard
     {
+        public string BitsLearboardsScope { get; set; } = "bits:read";
+        public string ClientId { get; set; }
+        public string PathUrl { get; set; } = "/bits/leaderboard";
+    }
+    public record BitsLeaderBoardRequestBody
+    {
+        public int Count { get; set; }
+        public string Period { get; set; } // time period
+        public string Started_At { get; set; }
+        public string User_Id { get; set; }
+    }
+    public record BitsLeaderBoardResponseBody
+    {
+        public BitsLeaderBoardData Data { get; set; }
+        public BitsLeaderBoardDataRange Data_Range { get; set; }
+        public int Total { get; set; }
+    }
+    public record BitsLeaderBoardData
+    {
+        public string User_Id { get; set; }
+        public string User_Login { get; set; }
+        public string User_Name { get; set; }
+        public int Rank { get; set; }
+        public int Score { get; set; }
+    }
+    public record BitsLeaderBoardDataRange
+    {
+        public string Started_At { get; set; }
+        public string Ended_At { get; set; }
     }
 }

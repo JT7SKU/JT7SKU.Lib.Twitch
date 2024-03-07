@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.Api.ChannelPoints
 {
-    internal class UpdateRedemptionStatus
+    public class UpdateRedemptionStatus
     {
+
     }
 }
