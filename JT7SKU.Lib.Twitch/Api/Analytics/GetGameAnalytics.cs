@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JT7SKU.Lib.Twitch.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace JT7SKU.Lib.Twitch.Api.Analytics
     public record GameAnalyticsResponse
     {
         public GameAnalyticsData Data { get; set; }
-        public GameAnalyticsPagination Pagination { get; set; }
+        public Pagination Pagination { get; set; }
     }
     public record GameAnalyticsData
     {
@@ -40,9 +41,5 @@ namespace JT7SKU.Lib.Twitch.Api.Analytics
     {
         public string Started_At { get; set; }
         public string Ended_At { get; set; }
-    }
-    public record GameAnalyticsPagination 
-    {
-        public string Cursor { get; set; }
     }
 }

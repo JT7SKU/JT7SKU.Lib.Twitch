@@ -10,7 +10,7 @@ namespace JT7SKU.Lib.Twitch.Api.Ads
     {
         public string CommercialScope { get; set; } = " channel:edit:commercial";
         public string ClientId { get; set; }
-        public string url { get; set; } = "helix/channels/commercial";
+        public string url { get; set; } = "/channels/commercial";
         public CommercialRequestBody RequestBody { get; set; }
         public CommersialResponseBody ResponseBody { get; set; }
     }

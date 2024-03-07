@@ -13,7 +13,7 @@ namespace JT7SKU.Lib.Twitch.Api.Ads
         public string ClientId { get; set; }
         public string UserId { get; set; }
         public string BroadcasterId { get; set; }
-        public string Url { get; set; } = "";
+        public string Url { get; set; } = "/channels/ads/schedule/snooze";
         public NextSnoozeRequestBody SnoozeRequestBody { get; set; }
         public NextSnoozeResponseBody SnoozeResponseBody { get; set; }
     }

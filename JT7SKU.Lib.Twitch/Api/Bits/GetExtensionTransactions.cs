@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JT7SKU.Lib.Twitch.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace JT7SKU.Lib.Twitch.Api.Bits
     public record ExtensionTransactionResponseBody
     {
         public ExtensionTransasctionData Data { get; set; }
-        public ExtensionTransactionPagination Pagination { get; set; }
+        public Pagination Pagination { get; set; }
     }
     public record ExtensionTransasctionData
     {
@@ -40,10 +41,6 @@ namespace JT7SKU.Lib.Twitch.Api.Bits
         public string User_Name { get; set; }
         public string Product_Type { get; set; }
         public ExtensionProductData Product_Data { get; set; }
-    }
-    public record ExtensionTransactionPagination
-    {
-        public string Cursor { get; set; }
     }
     public record ExtensionProductData
     {

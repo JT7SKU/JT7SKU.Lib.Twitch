@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JT7SKU.Lib.Twitch.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace JT7SKU.Lib.Twitch.Api.Channels
     public record ChannelFollowersResponseBody
     {
         public ChannelEditorsData Data { get; set; }
-        public ChannelFollowersPagination Pagination { get; set; }
+        public Pagination Pagination { get; set; }
         public int Total { get; set; }
     }
     public enum ChannelFollowersResponseCodes
@@ -42,9 +43,5 @@ namespace JT7SKU.Lib.Twitch.Api.Channels
         public string UserId { get; set; }
         public string UserLogin { get; set; }
         public string UserName { get; set; }
-    }
-    public record ChannelFollowersPagination
-    {
-        public string Cursor { get; set; }
     }
 }
