@@ -33,7 +33,7 @@ namespace JT7SKU.Lib.Twitch.Api.Ads
         public string NextAdAt { get; set; }
         public int Duration { get; set; }
         public string LastAdAt { get; set; }
-        public int PreRoll_Free_Time { get; set; }
+        public int PreRollFree_Time { get; set; }
     }
 
 }

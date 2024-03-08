@@ -35,12 +35,12 @@ namespace JT7SKU.Lib.Twitch.Api.Analytics
         public string Extension_Id { get; set; }
         public string Url { get; set; }
         public string Type { get; set; } // type of the report
-        public ExtensionAnalyticsRange Data_Range { get; set; }
+        public ExtensionAnalyticsRange DataRange { get; set; }
         
     }
     public record ExtensionAnalyticsRange
     {
-        public string Started_At { get; set; }
-        public string Ended_At { get; set; }
+        public string StartedAt { get; set; }
+        public string EndedAt { get; set; }
     }
 }

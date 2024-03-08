@@ -20,16 +20,16 @@ namespace JT7SKU.Lib.Twitch.Api.Channels
     public record ModifyChannelInformationRequestQuery
     {
         [Required]
-        public string Broadcaster_Id { get; set; }
+        public string BroadcasterId { get; set; }
     }
     public record ModifyChannelInformationRequestBody
     {
-        public string Game_Id { get; set; }
-        public string Broadcaster_Language { get; set; }
+        public string GameId { get; set; }
+        public string BroadcasterLanguage { get; set; }
         public string Title { get; set; }
         public int Delay { get; set; }
         public IEnumerable<string> Tags { get; set; }
-        public IEnumerable<Labels> Concontent_classification_labels { get; set; }
+        public IEnumerable<Labels> ConcontentClassificationLabels { get; set; }
         public bool Is_Branded_Content { get; set; }
     }
     public record Labels
@@ -37,7 +37,7 @@ namespace JT7SKU.Lib.Twitch.Api.Channels
         [Required]
         public string Id { get; set; }
         [Required]
-        public bool Is_Enabled { get; set; }
+        public bool IsEnabled { get; set; }
     }
     
 

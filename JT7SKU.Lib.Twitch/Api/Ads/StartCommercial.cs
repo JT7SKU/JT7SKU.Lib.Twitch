@@ -27,6 +27,6 @@ namespace JT7SKU.Lib.Twitch.Api.Ads
     {
         public int Lenght { get; set; }
         public string Message { get; set; }
-        public int Retry_After { get; set; }
+        public int RetryAfter { get; set; }
     }
 }

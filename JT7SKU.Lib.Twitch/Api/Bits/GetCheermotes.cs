@@ -16,7 +16,7 @@ namespace JT7SKU.Lib.Twitch.Api.Bits
     }
     public record CheermotesRequestBody
     {
-        public string Broadcaster_Id { get; set; }
+        public string BroadcasterId { get; set; }
     }
     public record CheermotesResponseBody
     {
@@ -28,24 +28,24 @@ namespace JT7SKU.Lib.Twitch.Api.Bits
         public CheermotesTiers Tiers { get; set; }
         public CheeremoteTypes Type { get; set; }
         public int Order { get; set; }
-        public string Last_updated { get; set; }
+        public string LastUpdated { get; set; }
         public bool Is_Charitable { get; set; }
     }
     public record CheermotesTiers
     {
-        public int Min_Bits { get; set; }
+        public int MinBits { get; set; }
         public string Id { get; set; } // tiers showing they level
         public string Color { get; set; }
         public Dictionary<int,string> Images { get; set; }
-        public bool Can_Cheer { get; set; }
-        public bool Show_in_bits_card { get; set; }
+        public bool CanCheer { get; set; }
+        public bool ShowInBitsCard { get; set; }
     }
     public enum CheeremoteTypes
     {
-        global_first_party,
-        global_third_party,
-        channel_custom,
-        display_only,
-        sponsored
+        GlobalFirstParty,
+        GlobalThirdParty,
+        ChannelCustom,
+        DisplayOnly,
+        Sponsored
     }
 }

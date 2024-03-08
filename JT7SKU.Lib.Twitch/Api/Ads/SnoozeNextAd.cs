@@ -28,8 +28,8 @@ namespace JT7SKU.Lib.Twitch.Api.Ads
     }
     public record NextSnooze
     {
-        public int Snooze_Count { get; set; }
-        public string Snooze_Refresh_At { get; set; }
-        public string Next_Ad_At { get; set; }
+        public int SnoozeCount { get; set; }
+        public string SnoozeRefreshAt { get; set; }
+        public string NextAdAt { get; set; }
     }
 }

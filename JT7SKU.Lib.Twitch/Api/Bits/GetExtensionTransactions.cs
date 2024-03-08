@@ -19,7 +19,7 @@ namespace JT7SKU.Lib.Twitch.Api.Bits
     public record ExtensionTransactionsRequestBody
     {
         [Required]
-        public string Extension_Id { get; set; }
+        public string ExtensionId { get; set; }
         public string Id { get; set; }
         public int First { get; set; }
         public string After { get; set; }
@@ -33,14 +33,14 @@ namespace JT7SKU.Lib.Twitch.Api.Bits
     {
         public string Id { get; set; }
         public string Timestamp { get; set; }
-        public string Broadcast_Id { get; set; }
-        public string Broadcaster_Login { get; set; }
-        public string Broadcaster_Name { get; set; }
-        public string User_Id { get; set; }
-        public string User_Login { get; set; }
-        public string User_Name { get; set; }
-        public string Product_Type { get; set; }
-        public ExtensionProductData Product_Data { get; set; }
+        public string BroadcastId { get; set; }
+        public string BroadcasterLogin { get; set; }
+        public string BroadcasterName { get; set; }
+        public string UserId { get; set; }
+        public string UserLogin { get; set; }
+        public string UserName { get; set; }
+        public string ProductType { get; set; }
+        public ExtensionProductData ProductData { get; set; }
     }
     public record ExtensionProductData
     {

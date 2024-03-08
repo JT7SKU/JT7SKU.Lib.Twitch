@@ -18,10 +18,10 @@ namespace JT7SKU.Lib.Twitch.Api.Analytics
     }
     public record GameAnalyticsRequest
     {
-        public string Game_Id { get; set; }
+        public string GameId { get; set; }
         public string Type { get; set; }
-        public string Started_At { get; set; }
-        public string Ended_Át { get; set; }
+        public string StartedAt { get; set; }
+        public string EndedÁt { get; set; }
         public int First { get; set; }
         public string After { get; set; }
     }
@@ -32,14 +32,14 @@ namespace JT7SKU.Lib.Twitch.Api.Analytics
     }
     public record GameAnalyticsData
     {
-        public string Game_Id { get; set; }
+        public string GameId { get; set; }
         public string Url { get; set; }
         public string Type { get; set; }
-        public GameAnalyticsDataRange Data_Range { get; set; }
+        public GameAnalyticsDataRange DataRange { get; set; }
     }
     public record GameAnalyticsDataRange
     {
-        public string Started_At { get; set; }
-        public string Ended_At { get; set; }
+        public string StartedAt { get; set; }
+        public string EndedAt { get; set; }
     }
 }

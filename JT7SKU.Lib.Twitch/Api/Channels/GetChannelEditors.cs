@@ -19,7 +19,7 @@ namespace JT7SKU.Lib.Twitch.Api.Channels
     public record ChannelEditorsRequestQuery
     {
         [Required]
-        public string Broadcaster_Id { get; set; }
+        public string BroadcasterId { get; set; }
     }
     public record ChannelEditorsResponseBody
     {

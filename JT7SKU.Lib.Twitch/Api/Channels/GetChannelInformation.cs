@@ -15,7 +15,7 @@ namespace JT7SKU.Lib.Twitch.Api.Channels
     }
     public record ChannelInformationRequestBody
     {
-        public string Broadcaster_Id { get; set; }
+        public string BroadcasterId { get; set; }
     }
     public record ChannelInformationResponseBody
     {
@@ -23,12 +23,12 @@ namespace JT7SKU.Lib.Twitch.Api.Channels
     }
     public record ChannelInformationData
     {
-        public string Broadcaster_Id { get; set; }
-        public string Broadcaster_Login { get; set; }
-        public string Broadcaster_Name { get; set; }
-        public string Broadcaster_Language { get; set; }
-        public string Game_Name { get; set; }
-        public string Game_Id { get; set; }
+        public string BroadcasterId { get; set; }
+        public string BroadcasterLogin { get; set; }
+        public string BroadcasterName { get; set; }
+        public string BroadcasterLanguage { get; set; }
+        public string GameName { get; set; }
+        public string GameId { get; set; }
         public string Title { get; set; }
         public uint Delay { get; set; }
         public string ContentClassificationlabels { get; set; }

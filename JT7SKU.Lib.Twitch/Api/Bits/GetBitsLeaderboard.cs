@@ -16,26 +16,26 @@ namespace JT7SKU.Lib.Twitch.Api.Bits
     {
         public int Count { get; set; }
         public string Period { get; set; } // time period
-        public string Started_At { get; set; }
-        public string User_Id { get; set; }
+        public string StartedAt { get; set; }
+        public string UserId { get; set; }
     }
     public record BitsLeaderBoardResponseBody
     {
         public BitsLeaderBoardData Data { get; set; }
-        public BitsLeaderBoardDataRange Data_Range { get; set; }
+        public BitsLeaderBoardDataRange DataRange { get; set; }
         public int Total { get; set; }
     }
     public record BitsLeaderBoardData
     {
-        public string User_Id { get; set; }
-        public string User_Login { get; set; }
-        public string User_Name { get; set; }
+        public string UserId { get; set; }
+        public string UserLogin { get; set; }
+        public string UserName { get; set; }
         public int Rank { get; set; }
         public int Score { get; set; }
     }
     public record BitsLeaderBoardDataRange
     {
-        public string Started_At { get; set; }
-        public string Ended_At { get; set; }
+        public string StartedAt { get; set; }
+        public string EndedAt { get; set; }
     }
 }
