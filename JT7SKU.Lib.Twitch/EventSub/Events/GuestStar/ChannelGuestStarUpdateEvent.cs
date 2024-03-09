@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JT7SKU.Lib.Twitch.EventSub.Events.Channel
+namespace JT7SKU.Lib.Twitch.EventSub.Events.GuestStar
 {
     public class ChannelGuestStarUpdateEvent
     {
@@ -13,11 +13,11 @@ namespace JT7SKU.Lib.Twitch.EventSub.Events.Channel
         public string BroadcasterUserLogin { get; set; }
         public string SessionId { get; set; }
         public string ModeratorUserId { get; set; }
-        public string ModeratorUserName { get; set;}
+        public string ModeratorUserName { get; set; }
         public string ModeratorLogin { get; set; }
         public string GuestStarUserId { get; set; }
-        public string GuestStarUserName { get;set; }
-        public string GuestStarLogin { get;set; }
+        public string GuestStarUserName { get; set; }
+        public string GuestStarLogin { get; set; }
         public string SlotId { get; set; }
         public string State { get; set; }
         public string UserId { get; set; }

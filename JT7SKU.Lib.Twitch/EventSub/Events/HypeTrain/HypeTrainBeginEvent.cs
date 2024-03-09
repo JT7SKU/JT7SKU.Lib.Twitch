@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JT7SKU.Lib.Twitch.EventSub.Events
+namespace JT7SKU.Lib.Twitch.EventSub.Events.HypeTrain
 {
-    public class HypeTrainProgressEvent
+    public class HypeTrainBeginEvent
     {
         public string Id { get; set; }
         public string BroadcasterUserId { get; set; }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JT7SKU.Lib.Twitch.EventSub.Events
+namespace JT7SKU.Lib.Twitch.EventSub.Events.HypeTrain
 {
-    public class HypeTrainBeginEvent
+    public class HypeTrainEndEvent
     {
         public string Id { get; set; }
         public string BroadcasterUserId { get; set; }
@@ -19,6 +19,7 @@ namespace JT7SKU.Lib.Twitch.EventSub.Events
         public LastContributions LastContributions { get; set; }
         public int Level { get; set; }
         public string StartedAt { get; set; }
-        public string ExpiresAt { get; set; }
+        public string EndedAt { get; set; }
+        public string CooldownEndsAt { get; set; }
     }
 }

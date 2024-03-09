@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JT7SKU.Lib.Twitch.Models;
 
-namespace JT7SKU.Lib.Twitch.EventSub.Events.Channel
+namespace JT7SKU.Lib.Twitch.EventSub.Events.GuestStar
 {
     public class ChannelGuestStarSettingsUpdateEvent
     {

@@ -8,10 +8,10 @@ namespace JT7SKU.Lib.Twitch.EventSub
 {
     public enum GoalType
     {
-        follow,
-        subscription,
-        subscripion_count,
-        new_subscription,
-        new_subscription_count
+        Follow,
+        Subscription,
+        SubscripionCount,
+        NewSubscription,
+        NewSubscriptionCount
     }
 }

@@ -8,11 +8,11 @@ namespace JT7SKU.Lib.Twitch.Models
 {
     public enum GroupLayout
     {
-        tiled,
-        screenshare,
-        horizontal_top,
-        horizontal_bottom,
-        vertical_left,
-        vertical_right
+        Tiled,
+        Screenshare,
+        HorizontalTop,
+        HorizontalBottom,
+        VerticalLeft,
+        VerticalRight
     }
 }

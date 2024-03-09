@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JT7SKU.Lib.Twitch.EventSub.Conditions
+namespace JT7SKU.Lib.Twitch.EventSub.Conditions.Conduit
 {
     public class ConduitShardDisabledCondition
     {

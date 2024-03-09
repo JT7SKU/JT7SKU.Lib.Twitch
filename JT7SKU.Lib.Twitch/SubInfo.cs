@@ -6,8 +6,8 @@ namespace JT7SKU.Lib.Twitch
 {
     public enum SubInfo
     {
-        resub,
-        sub,
-        giftsub
+        Resub,
+        Sub,
+        GiftSub
     }
 }

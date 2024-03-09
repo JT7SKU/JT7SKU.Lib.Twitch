@@ -8,13 +8,13 @@ namespace JT7SKU.Lib.Twitch.Models
 {
     public enum ChannelGuestStarState
     {
-        invited,
-        accepted,
-        ready,
-        backstage,
-        live,
-        removed,
-        acceptedCall
+        Invited,
+        Accepted,
+        Ready,
+        Backstage,
+        Live,
+        Removed,
+        AcceptedCall
 
 
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JT7SKU.Lib.Twitch.EventSub.Events
+namespace JT7SKU.Lib.Twitch.EventSub.Events.Stream
 {
     public class StreamOnlineEvent
     {
