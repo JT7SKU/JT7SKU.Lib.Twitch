@@ -9,39 +9,37 @@ using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.Api.Chat
 {
-    public class GetChannelEmotes
+    public class GetEmoteSets
     {
-       //need user access token or app access token
+        // Authorization Requires App Access Token or User Access Token
         public string ClientId { get; set; }
-        public string PathUrl { get; set; } = "/chat/emotes";
-        public GetChannelEmotesRequestQuery RequestQuery { get; set; }
-        public GetChannelEmotesResponseBody ResponseBody { get; set; }
-        public GetChannelEmotesResponseCodes ResponseCodes { get; set; }
+        public string PathUrl { get; set; } = "/chat/emotes/set";
+
     }
-    public record GetChannelEmotesRequestQuery
+    public record GetEmoteSetsRequestQuery
     {
         [Required]
-        public string BroadcasterId { get; set; }
+        public string EmoteSetId { get; set; } // For example, emote_set_id=1234&emote_set_id=5678. You may specify a maximum of 25 IDs. The response contains only the IDs that were found and ignores duplicate IDs.
     }
-    public record GetChannelEmotesResponseBody
+    public record GetEmoteSetsResponseBody
     {
-        public GetChannelEmotesData Data { get; set; }
-        public string Template { get; set; } //templateURL CDN to look more
+       public GetGlobalEmotesData Data { get; set; }
+        public string Template { get; set; }
     }
-    public enum GetChannelEmotesResponseCodes
+    public enum GetEmoteSetsResponseCodes
     {
         OK=200,
         BadRequest=400,
-        Unauthorized=401
+        Unauthirized=401
     }
-    public record GetChannelEmotesData
+    public record GetEmoteSetsData
     {
         public string Id { get; set; }
         public string Name { get; set; }
         public Image Images { get; set; }
-        public SubPlanType Tier { get; set; }
         public EmoteType EmoteType { get; set; }
         public string EmoteSetId { get; set; }
+        public string OwnerId { get; set; }
         public EmoteFormat Format { get; set; }
         public EmoteScale Scale { get; set; }
         public ThemeMode ThemeMode { get; set; }
