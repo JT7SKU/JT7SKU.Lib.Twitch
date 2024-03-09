@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -24,7 +23,6 @@ namespace Services.Kohdistuma.Unit.Twitch.OData.Controllers
         }
 
         [HttpGet]
-        [EnableQuery()]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
