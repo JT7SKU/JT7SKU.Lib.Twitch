@@ -52,10 +52,5 @@ namespace JT7SKU.Lib.Twitch.Api.Bits
         public string Expiration { get; set; }
         public bool Broadcast { get; set; }
     }
-    public record ProductCost
-    {
-        public int Amount { get; set; }
-        public string Type { get; set; }
-    }
 }
 
