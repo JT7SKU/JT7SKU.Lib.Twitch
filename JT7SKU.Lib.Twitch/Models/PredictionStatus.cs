@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JT7SKU.Lib.Twitch.Api.Raids
+namespace JT7SKU.Lib.Twitch.Models
 {
-    internal class SetARaid
+    public enum PredictionStatus
     {
+        ACTIVE,
+        CANCELED,
+        LOCKED,
+        RESOLVED
     }
 }
