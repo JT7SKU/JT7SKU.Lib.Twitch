@@ -12,6 +12,7 @@ namespace JT7SKU.Lib.Twitch.EventSub
         playlist,
         watch_party,
         premiere,
-        rerun
+        rerun,
+        all
     }
 }

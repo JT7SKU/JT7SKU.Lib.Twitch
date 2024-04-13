@@ -10,6 +10,16 @@ namespace JT7SKU.Lib.Twitch.Models
     {
         BitsTier,
         Follower,
-        Subscriptions
+        Subscriptions,
+        ChannelPoints,
+        Rewards,
+        HypeTrain,
+        Prime,
+        Turbo,
+        Smilies,
+        Globals,
+        OWL2019,
+        TwoFactor,
+        LimitedTime
     }
 }
