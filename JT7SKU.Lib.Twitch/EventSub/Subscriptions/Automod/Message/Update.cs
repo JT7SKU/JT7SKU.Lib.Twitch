@@ -17,7 +17,7 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Automod.Message
     internal class Update
     {
     }
-    public record AutomodMessageUpdate
+    public record AutomodMessageUpdateRequestBody
     {
         [Required]
         public string Type { get; set; }
