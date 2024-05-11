@@ -31,4 +31,8 @@
     <PackageReference Include="System.Threading.RateLimiting" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EventSub\Subscriptions\Goal\" />
+  </ItemGroup>
+
 </Project>

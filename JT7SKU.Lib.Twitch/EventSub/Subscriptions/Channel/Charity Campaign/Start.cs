@@ -9,4 +9,17 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Channel.Charity_Campaign
     internal class Start
     {
     }
+    #region Channel.Charity Campaign.Start
+    // Sends a notification when the broadcaster starts a charity campaign.
+    // It’s possible to receive this event after the Progress event.
+    // Requires the channel:read:charity scope.
+    public record ChannelCharityCampaignStartRequestBody
+    {
+
+    }
+    public record ChannelCharityCampaignStartNotificationPayload
+    {
+
+    }
+    #endregion
 }
