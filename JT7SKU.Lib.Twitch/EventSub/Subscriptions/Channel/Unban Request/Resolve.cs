@@ -32,7 +32,7 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Channel.Unban_Request
     public record ChannelUnbanRequestResolveNotificationPayload
     {
         public Models.Subscription Subscription { get; set; }
-        public ChannelUnbanEvent Event { get; set; }
+        public ChannelUnbanRequestResolveEvent Event { get; set; }
     }
     #endregion
 }

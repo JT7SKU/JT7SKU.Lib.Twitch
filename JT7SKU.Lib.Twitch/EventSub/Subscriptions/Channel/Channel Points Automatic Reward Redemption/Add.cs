@@ -32,7 +32,7 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Channel.Channel_Points_Automa
     {
 
         public Models.Subscription Subscription { get; set; }
-        public ChannelPointsCustomRewardsAddEvent Event { get; set; }
+        public ChannelPointsAutomaticRewardRedemptionAddEvent Event { get; set; }
     }
     #endregion
 }

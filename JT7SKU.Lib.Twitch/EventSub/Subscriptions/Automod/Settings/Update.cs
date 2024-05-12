@@ -1,4 +1,5 @@
 ﻿using JT7SKU.Lib.Twitch.EventSub.Conditions.Automod;
+using JT7SKU.Lib.Twitch.EventSub.Events.Automod;
 using JT7SKU.Lib.Twitch.Models;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,6 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Automod.Settings
     public record AutomodSettingsUpdateNotificationPayload
     {
         public Subscription Subscription { get; set; }
-        public Event Event { get; set; }
+        public AutomodSettingsUpdateEvent Event { get; set; }
     }
 }

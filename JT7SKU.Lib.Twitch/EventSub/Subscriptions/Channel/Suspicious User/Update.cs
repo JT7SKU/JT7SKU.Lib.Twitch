@@ -1,6 +1,7 @@
 ﻿using JT7SKU.Lib.Twitch.EventSub.Conditions.Channel;
 using JT7SKU.Lib.Twitch.EventSub.Events.Channel;
 using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Conditions.Channel.SuspisiousUser;
+using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Events.Channel.SuspiciousUser;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -33,7 +34,7 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Channel.Suspicious_User
     public record ChannelSuspiciousUserUpdateNotificationPayload
     {
         public Models.Subscription Subscription { get; set; }
-        public ChannelSuspsiousUserUpdateEvent Event { get; set; }
+        public ChannelSuspiciousUserUpdateEvent Event { get; set; }
     }
     #endregion
 }

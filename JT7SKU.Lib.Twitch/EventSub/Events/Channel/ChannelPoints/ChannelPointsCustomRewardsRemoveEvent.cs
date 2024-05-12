@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using JT7SKU.Lib.Twitch.EventSub;
 using JT7SKU.Lib.Twitch.Models;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Events.Channel.ChannelPoints
 {

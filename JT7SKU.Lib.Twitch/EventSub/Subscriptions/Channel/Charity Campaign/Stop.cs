@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Events.Channel.Charity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,8 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Channel.Charity_Campaign
     }
     public record ChannelCharityCampaignStopNotificationPayload
     {
-
+        public Models.Subscription Subscription { get; set; }
+        public CharityCampaignStopEvent Event { get; set; }
     }
     #endregion
 }

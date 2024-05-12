@@ -2,6 +2,7 @@
 using JT7SKU.Lib.Twitch.EventSub.Events.Channel;
 using JT7SKU.Lib.Twitch.Models;
 using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Conditions.Channel.Moderation;
+using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Events.Channel.Moderation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -39,7 +40,7 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Channel
     public record ChannelModerateNotificationPayload
     {
         public Models.Subscription Subscription { get; set; }
-        public Event Event { get; set; }
+        public ChannelModerateEvent Event { get; set; }
     }
 
     #endregion

@@ -1,6 +1,7 @@
 ﻿using JT7SKU.Lib.Twitch.EventSub.Conditions.Channel;
 using JT7SKU.Lib.Twitch.EventSub.Events.Channel;
 using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Conditions.Channel.VIP;
+using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Events.Channel.VIP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
