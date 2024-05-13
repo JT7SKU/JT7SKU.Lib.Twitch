@@ -1,5 +1,6 @@
 ﻿using JT7SKU.Lib.Twitch.EventSub.Conditions.Channel;
 using JT7SKU.Lib.Twitch.EventSub.Events.Channel;
+using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Conditions.Channel.Charity;
 using JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Events.Channel.Charity;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ namespace JT7SKU.Lib.Twitch.EventSub.Subscriptions.Channel.Charity_Campaign
         public string Version { get; set; }
         [Required]
         public CharityDonationCondition Condition { get; set; }
+        [Required]
+        public string BroadcasterUserId { get; set; }
         [Required]
         public Transport Transport { get; set; }
     }
