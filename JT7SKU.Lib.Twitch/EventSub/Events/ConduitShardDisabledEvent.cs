@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.EventSub.Events
 {
-    public class ConduitDisabledShardEvent
+    public class ConduitShardDisabledEvent
     {
         public string ConduitId { get; set; }
         public string ShardId { get; set; }

@@ -12,6 +12,8 @@ namespace JT7SKU.Lib.Twitch.EventSub
         Subscription,
         SubscripionCount,
         NewSubscription,
-        NewSubscriptionCount
+        NewSubscriptionCount,
+        NewBit,
+        NewCheerer
     }
 }
