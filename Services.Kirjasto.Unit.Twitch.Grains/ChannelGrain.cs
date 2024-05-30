@@ -6,6 +6,7 @@ using Services.Kirjasto.Unit.Twitch.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Services.Kirjasto.Unit.Twitch.Grains
@@ -23,7 +24,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
             this.logger = logger;
         }
         
-        public  async Task OnActivateAsync()
+        public override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
             this.State.IsLive = true;
             this.State.Subscriptions = new Dictionary<string, ITwitchSubscriber>();

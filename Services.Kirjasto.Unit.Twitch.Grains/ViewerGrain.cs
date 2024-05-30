@@ -5,12 +5,13 @@ using System.Text;
 using Orleans;
 using System.Threading.Tasks;
 using Services.Kirjasto.Unit.Twitch.Interfaces;
+using System.Threading;
 
 namespace Services.Kirjasto.Unit.Twitch.Grains
 {
     public class ViewerGrain : Grain,ITwitchViewer
     {
-        public async Task OnActivateAsync()
+        public override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using JT7SKU.Lib.Twitch;
 using Orleans;
@@ -13,7 +14,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
         private readonly Follower follower;
         private bool IsFollowing = false;
         
-        public async Task OnActivateAsync()
+        public override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }

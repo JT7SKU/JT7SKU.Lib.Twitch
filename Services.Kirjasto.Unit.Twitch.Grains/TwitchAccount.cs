@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Services.Kirjasto.Unit.Twitch.Grains
@@ -26,7 +27,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
         private string GrainType => nameof(TwitchAccount);
         private string GrainKey => this.GetPrimaryKeyString();
         #region Grain overrides
-        public async Task OnActivateAsync()
+        public override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
             if (this.State.RecentReceiveMessages == null) this.State.RecentReceiveMessages = new Queue<Message>(ReceivedMessageCacheSize);
             if (this.State.MyPublishedMessages == null) this.State.MyPublishedMessages = new Queue<Message>(PublishedMessageCacheSize);
@@ -100,7 +101,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
 
         public async Task<ImmutableList<Message>> GetReceivedWhispersAsync(int n = 10, int start = 0) 
         {
-            throw new NotImplementedException();
+             throw new NotImplementedException();
         }
 
         

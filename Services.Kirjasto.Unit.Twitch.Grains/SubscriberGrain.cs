@@ -4,13 +4,14 @@ using Services.Kirjasto.Unit.Twitch.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Services.Kirjasto.Unit.Twitch.Grains
 {
     public class SubscriberGrain :Grain, ITwitchSubscriber
     {
-        public async Task OnActivateAsync()
+        public override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }

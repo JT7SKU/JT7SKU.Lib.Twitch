@@ -8,6 +8,7 @@ using Services.Kirjasto.Unit.Twitch.Interfaces;
 using JT7SKU.Lib.Twitch;
 using Orleans.Runtime;
 using JT7SKU.Lib.Twitch.Models;
+using System.Threading;
 
 namespace Services.Kirjasto.Unit.Twitch.Grains
 {
@@ -19,7 +20,7 @@ namespace Services.Kirjasto.Unit.Twitch.Grains
         {
             _broadcasterProfile = broadcasterState;
         }
-        public async Task OnActivateAsync()
+        public override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }
