@@ -8,6 +8,7 @@ namespace JT7SKU.Lib.Twitch.Models
 {
     public class Reward
     {
+        public RewardType RewardType { get; set; }
         public string Id { get; set; }
         public string Title { get; set; }
         public int Cost { get; set; }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JT7SKU.Lib.Twitch.Models;
+using JT7SKU.StreamService.KirjastoUtility.Twitch.Models;
 
 namespace JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Events.Channel.Chat
 {
@@ -17,11 +18,12 @@ namespace JT7SKU.StreamService.KirjastoUtility.Twitch.EventSub.Events.Channel.Ch
         public string ChatterUserLogin { get; set; }
         public string MessageId { get; set; }
         public ChatMessage Message { get; set; }
-        public string MessageType { get; set; }
+        public ChatMessageType MessageType { get; set; }
         public ChatBadges Badges { get; set; }
         public ChatCheer Cheer { get; set; }
         public string Color { get; set; }
         public ChatReply Reply { get; set; }
         public string ChannelPointsCustomRewardsId { get; set; }
+        public string ChannelPointsAnimationId { get; set; }
     }
 }
