@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JT7SKU.Lib.Twitch.Models
+namespace JT7SKU.StreamService.KirjastoUtility.Twitch.Models.Emojis
 {
-    public enum EmoteScale 
+    public enum EmoteFormat
     {
-        small=1,
-        medium=2,
-        large=3
+        Animated,
+        Static
     }
 }

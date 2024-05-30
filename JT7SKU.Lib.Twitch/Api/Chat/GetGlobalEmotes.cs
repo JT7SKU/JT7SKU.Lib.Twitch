@@ -1,5 +1,6 @@
 ﻿using JT7SKU.Lib.Twitch.EventSub;
 using JT7SKU.Lib.Twitch.Models;
+using JT7SKU.StreamService.KirjastoUtility.Twitch.Models.Emojis;
 using System;
 using System.Collections.Generic;
 using System.Linq;

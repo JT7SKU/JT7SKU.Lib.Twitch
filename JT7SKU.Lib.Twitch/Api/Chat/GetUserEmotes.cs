@@ -1,4 +1,5 @@
 ﻿using JT7SKU.Lib.Twitch.Models;
+using JT7SKU.StreamService.KirjastoUtility.Twitch.Models.Emojis;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace JT7SKU.Lib.Twitch.Api.Chat
 {
-    
+
     public class GetUserEmotes
     {
         // Beta feature

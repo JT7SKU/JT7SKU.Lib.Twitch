@@ -1,4 +1,4 @@
-﻿namespace JT7SKU.Lib.Twitch.Models
+﻿namespace JT7SKU.StreamService.KirjastoUtility.Twitch.Models.Emojis
 {
     public class Emote
     {
