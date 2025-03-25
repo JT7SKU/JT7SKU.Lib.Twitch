@@ -1,0 +1,17 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Kirjasto/">
+    <Project Path="JT7SKU.Lib.Twitch/JT7SKU.Lib.Twitch.csproj" />
+  </Folder>
+  <Folder Name="/Kirjasto/Komponentit/">
+    <Project Path="ServicesKomponentUnit.Data/ServicesKomponentUnit.Data.Twitch.csproj" />
+    <Project Path="Stream.Komponent.Unit.Extension.Twitch/Stream.Komponent.Unit.Extension.Twitch.csproj" />
+  </Folder>
+  <Folder Name="/Tests/" />
+</Solution>
